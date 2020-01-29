@@ -5,16 +5,19 @@ require './lib/school'
 class SchoolTest < Minitest::Test
   #Iteration 1 Tests:
   def test_it_exists
-    school = School.new('9:00', 7)
-
-    assert_instance_of School, school
-  end
-
-  def test_it_has_start_time
     skip
     school = School.new('9:00', 7)
 
+    assert_instance_of School, school
+      require "pry"; binding.pry
+  end
+
+  def test_it_has_start_time
+    school = School.new('9:00', 7)
+
     assert_equal '9:00', school.start_time
+    #pry(main)> school.start_time
+    #=> "9:00"
   end
 
   def test_it_has_hours_in_school_day
@@ -52,3 +55,13 @@ class SchoolTest < Minitest::Test
     assert_equal '12:00', school2.end_time
   end
 end
+
+
+
+
+
+#pry(main)> school.hours_in_school_day
+#=> 7
+
+#pry(main)> school.student_names
+#=> []
