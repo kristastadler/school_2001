@@ -6,4 +6,9 @@ class School
     @start_time = start_time_parameter
     @student_names = []
   end
+
+  def add_student_name(student_name_parameter)
+    @student_names << student_name_parameter
+  end
+
 end

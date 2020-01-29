@@ -24,6 +24,7 @@ class SchoolTest < Minitest::Test
     school = School.new('9:00', 7)
 
     assert_equal 7, school.hours_in_school_day
+
   end
 
   def test_it_starts_with_no_student_names
@@ -31,11 +32,11 @@ class SchoolTest < Minitest::Test
     school = School.new('9:00', 7)
 
     assert_equal [], school.student_names
+    require "pry"; binding.pry
   end
 
   #Iteration 2 Tests:
   def test_it_can_add_student_names
-    skip
     school = School.new('9:00', 7)
 
     school.add_student_name('Aurora')
@@ -43,6 +44,7 @@ class SchoolTest < Minitest::Test
     school.add_student_name('megan')
 
     assert_equal ['Aurora', 'tim', 'megan'], school.student_names
+    require "pry"; binding.pry
   end
 
   def test_it_can_calculate_end_time
@@ -55,12 +57,12 @@ class SchoolTest < Minitest::Test
   end
 end
 
-
-
-
-
-#pry(main)> school.hours_in_school_day
-#=> 7
+#pry(main)> school.add_student_name('Aurora')
+#pry(main)> school.add_student_name('tim')
+#pry(main)> school.add_student_name('megan')
 
 #pry(main)> school.student_names
-#=> []
+#=> ["Aurora", "tim", "megan"]
+
+#pry(main)> school.end_time
+#=> "16:00"
