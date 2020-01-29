@@ -11,4 +11,9 @@ class School
     @student_names << student_name_parameter
   end
 
+def end_time
+  start_time.to_i
+  p start_time + hours_in_school_day
+end
+
 end
