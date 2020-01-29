@@ -9,15 +9,14 @@ class SchoolTest < Minitest::Test
     school = School.new('9:00', 7)
 
     assert_instance_of School, school
-      require "pry"; binding.pry
+
   end
 
   def test_it_has_start_time
+    skip
     school = School.new('9:00', 7)
 
     assert_equal '9:00', school.start_time
-    #pry(main)> school.start_time
-    #=> "9:00"
   end
 
   def test_it_has_hours_in_school_day
